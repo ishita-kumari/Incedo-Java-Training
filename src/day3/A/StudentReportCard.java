@@ -2,46 +2,6 @@ package day3.A;
 
 import java.util.*;
 
-class Pair{
-	char grade;
-	String judgement;
-	Pair(char grade, String judgement){
-		this.grade = grade;
-		this.judgement = judgement;
-	}
-}
-
-class ReportCardPrinter{
-	void reportPrint(ReportCard reportCard) {
-		reportCard.displayReport();
-	}
-	void reportPrint(List<ReportCard> reportCards) {
-		for(ReportCard rc: reportCards) {
-			rc.displayReport();
-		}
-	}
-}
-class ReportCard {
-	String name, surname;
-	int studentClass;
-	Map<String, Pair> subjects = new HashMap<>();
-	public ReportCard(String name, String surname, int studentClass) {
-		this.name = name;
-		this.surname = surname;
-		this.studentClass = studentClass;
-	}
-	public void addSubject(String subject, Pair voteAndJudgment) {
-        subjects.put(subject, voteAndJudgment);
-    }
-	void displayReport() {
-		System.out.println("Report Card for "+name+" "+surname);
-		System.out.println("Class: "+studentClass);
-		System.out.println("Subject and Judgements: ");
-		for(Map.Entry<String, Pair> m: subjects.entrySet()) {
-			System.out.println(m.getKey()+" "+m.getValue().grade+" "+m.getValue().judgement);
-		}
-	}
-}
 public class StudentReportCard{
 	public static void main(String[] args) {
 		ReportCardPrinter reportprinter = new ReportCardPrinter();
@@ -50,6 +10,11 @@ public class StudentReportCard{
 		Scanner sc = new Scanner(System.in);
 		List<ReportCard> reportCardList = new ArrayList<>();
 		while((num=sc.next().charAt(0))=='y') {
+			
+			System.out.println("Enter name: ");
+			String name = sc.next();
+			System.out.println("Enter surname: ");
+			String surname = sc.next();
 			ReportCard report = new ReportCard("Ishita", "Kumari",10);
 			
 			System.out.print("Enter subject: ");

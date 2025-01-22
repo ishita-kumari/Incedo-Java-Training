@@ -1,0 +1,22 @@
+Chess
+
+positions moves
+Pieces: King, Queen, Rook, Bishop, Knight, Pawn
+
+checks for conditions like 
+1) check, 
+2) checkmate, 
+3) stalemate, and 
+4) special moves like 
+	* castling or 
+	* en passant
+
+
+Combination of Creational, Structural, and Behavioral patterns
+
+* Factory Pattern: Piece Creation
+* Strategy Pattern: Movement Logic for Each Piece
+* Composite Pattern: The Chess Board
+* Observer Pattern: Game State Monitoring (Check/Checkmate/stalemate/castling/)
+* Command Pattern: Player Actions
+* State Pattern: Game Phases (Turn, Check, Checkmate)
